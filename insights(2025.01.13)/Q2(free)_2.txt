@@ -1,0 +1,43 @@
+The paper identifies several key differences in sentiment expression between software engineering (SE) texts and social texts (such as comments on social media). Here are the main differences highlighted:
+
+1. **Indirect and Dispersed Sentiment Expression**: 
+   - SE texts tend to express sentiments in a more indirect and dispersed manner compared to social texts. In SE texts, authors often describe issues or technical details before or after expressing their sentiments, which makes the sentiment less direct.
+
+2. **Lower Percentage of Sentimental Texts**: 
+   - The paper reports that a smaller percentage of SE texts are labeled as sentimental compared to social texts. For example, 90.1% of MySpace comments were labeled as sentimental, while only 61.7% of Stack Overflow posts were labeled as such.
+
+3. **Sentimental Density**: 
+   - The average sentimental density (the ratio of sentimental words to total words) is lower in SE texts. For instance, the average sentimental density for MySpace comments is 0.148, while for Stack Overflow posts, it is 0.092. This indicates that SE texts contain fewer sentimental words relative to their length.
+
+4. **Complex Sentence Structures**: 
+   - SE texts often feature longer and more complex sentences, which can include multiple clauses. This complexity arises from the need to describe technical issues in detail, making it harder to identify sentiments.
+
+5. **Use of Neutral Words**: 
+   - Certain words that are typically negative in social contexts (like "error") may be neutral in SE texts when discussing technical issues. This difference in context affects how sentiments are interpreted.
+
+6. **Patterns of Sentiment Expression**: 
+   - The paper proposes specific patterns (e.g., Direct Sentiment Pattern, Decorated Sentiment Pattern, "About Me" Pattern, and Judgement Pattern) that are more relevant to SE texts. These patterns help identify when sentiments are being expressed, which differs from the more straightforward expressions found in social texts.
+
+Overall, these differences suggest that sentiment analysis tools designed for social media may not perform well on SE texts due to the unique ways sentiments are expressed in the latter. The authors argue for the need to develop specialized sentiment analysis approaches that take these differences into account.
+
+The paper proposes a systematic approach to handle sentiment analysis in software engineering (SE) texts, which is based on the unique characteristics of sentiment expression in this domain. The proposed method, named SESSION (SentEnce-Structure-based SentIment analysis for sOftware eNgineering), consists of three main steps:
+
+1. **Preprocessing and Segmenting SE Texts**:
+   - The first step involves preprocessing the input SE text to filter out technical words and irrelevant content. This includes removing greetings, technical jargon, and certain punctuation that may not contribute to sentiment analysis.
+   - The text is then segmented into sentences and further divided into clauses using natural language processing tools (e.g., Stanford CoreNLP). Each word in the clauses is annotated with its part of speech (POS) tagging, which lays the groundwork for the subsequent analysis.
+
+2. **Matching Patterns to Trigger Follow-on Analysis**:
+   - In this step, the approach applies specific filter rules to identify whether a sentence or clause is likely to express sentiment. The rules are based on observed patterns in SE texts, which include:
+     - **Direct Sentiment Pattern**: Identifies sentences that contain exclamation marks, emojis, interjections, or imperative sentences with high sentimental density.
+     - **Decorated Sentiment Pattern**: Looks for sentimental words that are modified by adverbs, indicating a stronger sentiment.
+     - **"About Me" Pattern**: Focuses on first-person expressions of sentiment, which are more likely to convey personal feelings.
+     - **Judgement Pattern**: Captures sentences that express judgments about other entities, which often contain sentimental expressions.
+   - Sentences that do not match any of these patterns are filtered out and not analyzed for sentiment.
+
+3. **Adjusting the Sentiment Analysis**:
+   - The final step involves applying adjustment rules to enhance the results of the sentiment analysis. These rules address specific challenges in SE texts, such as:
+     - **Recognizing Subjunctive Mood**: Sentiments expressed in subjunctive clauses (e.g., hypothetical situations) are ignored, as they do not reflect real sentiments.
+     - **Identifying Polysemous Words**: The meaning of certain words can change based on context. The approach uses POS tagging and collocation analysis to determine the correct sentiment associated with polysemous words.
+     - **Dealing with Negations**: The method refines how negations affect sentiment scores, ensuring that the sentiment of a word is accurately represented when preceded by negation terms.
+
+By following these steps, the SESSION approach aims to improve the accuracy and reliability of sentiment analysis in SE texts, addressing the unique ways in which sentiments are expressed in this domain. The evaluation of the approach demonstrated that it outperforms existing sentiment analysis tools, particularly those not tailored for SE texts.

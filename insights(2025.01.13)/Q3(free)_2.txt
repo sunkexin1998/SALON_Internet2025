@@ -1,0 +1,42 @@
+Distinguishing between technical descriptive text and sentiment expressive text is crucial when analyzing sentiment in software engineering (SE) texts for several reasons outlined in the paper:
+
+1. **Nature of Expression**: The paper highlights that sentiments in SE texts are often expressed in a more indirect and dispersed manner compared to social texts. Developers typically describe issues or technical details before or after expressing their sentiments. This complexity necessitates a careful analysis to accurately identify where sentiments are actually expressed.
+
+2. **Complex Sentence Structures**: SE texts often contain complicated sentence structures that include multiple clauses, technical jargon, and specific contexts that may not directly convey sentiment. For instance, a sentence may contain a technical description followed by a sentiment, making it essential to segment and analyze the text at the clause level to identify the sentiment accurately.
+
+3. **Presence of Neutral Clauses**: Many clauses in SE texts may not express any sentiment at all, particularly those that are purely descriptive or technical. If sentiment analysis tools do not effectively filter out these neutral or technical clauses, they may misclassify the overall sentiment of the text, leading to unreliable results.
+
+4. **Polysemy and Contextual Meaning**: Words that may carry sentiment in social contexts can have neutral or different meanings in technical contexts. For example, the word "error" might be negative in social texts but neutral in SE discussions about code issues. Thus, understanding the context in which words are used is vital for accurate sentiment classification.
+
+5. **Improving Accuracy**: By distinguishing between technical and sentiment-expressive text, the proposed approach (SESSION) can apply specific filter and adjust rules that enhance the accuracy of sentiment analysis. This includes ignoring clauses that do not express sentiment and adjusting the sentiment scores based on the context and structure of the sentences.
+
+6. **Generalizability**: The paper argues that a dictionary-based approach, which incorporates these distinctions, tends to generalize better across different types of SE texts without requiring extensive labeled data for training. This is particularly important given the variability in how sentiments are expressed in different SE contexts.
+
+In summary, recognizing the differences between technical descriptive text and sentiment-expressive text is essential for developing effective sentiment analysis tools tailored to the unique characteristics of software engineering communication. This distinction helps improve the reliability and accuracy of sentiment analysis results in the SE domain.
+
+The paper outlines a systematic approach to distinguish between technical descriptive text and sentiment expressive text when analyzing sentiment in software engineering (SE) texts. This approach involves several key steps and rules, which are summarized as follows:
+
+1. **Preprocessing and Segmentation**:
+   - The first step involves preprocessing the SE text to filter out technical words and irrelevant content. This includes removing greetings, technical jargon, and certain punctuation that may not contribute to sentiment analysis.
+   - The text is then segmented into sentences and further divided into clauses using natural language processing (NLP) tools, such as Stanford CoreNLP. This segmentation allows for a more granular analysis of each part of the text.
+
+2. **Pattern Matching to Identify Sentiment**:
+   - The authors propose specific filter rules based on sentence structures to identify whether a clause is likely to express sentiment. These rules include:
+     - **Direct Sentiment Pattern**: Identifies sentences that contain exclamation marks, emojis, interjections, or imperative sentences with a high sentimental density.
+     - **Decorated Sentiment Pattern**: Looks for sentimental words that are modified by adverbs, indicating a stronger expression of sentiment.
+     - **"About Me" Pattern**: Focuses on first-person expressions of sentiment, such as sentences starting with "I" that contain sentimental words.
+     - **Judgment Pattern**: Identifies sentences that express judgments about objects or situations, which often indicate sentiment.
+
+3. **Ignoring Non-Sentimental Clauses**:
+   - Clauses that do not fit any of the defined patterns are filtered out. This helps to ignore technical descriptions or neutral statements that do not convey sentiment, thereby improving the accuracy of sentiment analysis.
+
+4. **Adjusting Sentiment Analysis**:
+   - The approach includes rules to adjust sentiment scores based on the context of the clauses. For example:
+     - **Recognizing Subjunctive Mood**: Sentiments expressed in subjunctive clauses (e.g., using "if" or "unless") are ignored, as they do not reflect real sentiments.
+     - **Identifying Polysemous Words**: The meaning of certain words can change based on context. The approach uses part-of-speech tagging and collocation analysis to determine the correct sentiment associated with polysemous words.
+     - **Handling Negations**: The method refines how negations affect sentiment scores, ensuring that the sentiment context is accurately captured.
+
+5. **Empirical Evaluation**:
+   - The proposed approach is evaluated against multiple datasets to assess its effectiveness in distinguishing between technical and sentiment-expressive text. The results demonstrate that the approach can significantly improve sentiment analysis accuracy by effectively filtering out non-sentimental content.
+
+By implementing these steps and rules, the proposed method (SESSION) aims to enhance the reliability of sentiment analysis in SE texts, ensuring that the unique characteristics of sentiment expression in this domain are appropriately addressed.

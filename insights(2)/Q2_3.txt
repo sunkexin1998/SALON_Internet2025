@@ -1,0 +1,12 @@
+Sentiment expression in software engineering texts differs from traditional texts due to the use of technical jargon, word contractions, emoticons, URLs, and code snippets. These elements complicate sentiment analysis, necessitating customized tools to accurately interpret sentiments in code review comments and other software engineering communications.
+
+To handle sentiment analysis in software engineering texts, the paper suggests several preprocessing steps: 
+1. **Expand contractions** to standardize language.
+2. **Remove URLs** that do not contribute to sentiment.
+3. **Replace emoticons** with corresponding sentiment words.
+4. **Implement negation preprocessing** to accurately capture sentiment in negated contexts using part-of-speech tagging and chunking.
+5. **Stem words** to reduce them to their base forms.
+6. **Remove stop-words** and programming keywords that do not convey sentiment.
+7. **Exclude code snippets** from comments to focus on sentiment-laden text.
+8. **Generate feature vectors** using TF-IDF for classification. 
+These steps enhance the accuracy of sentiment analysis tools like SentiCR.

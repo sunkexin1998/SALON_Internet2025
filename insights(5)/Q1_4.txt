@@ -1,0 +1,7 @@
+To analyze sentiment in software engineering texts, the paper presents SentiSW, an entity-level sentiment analysis tool specifically designed for issue comments in open-source software projects. The process involves several key steps:
+1. **Dataset Creation**: A manually labeled dataset of 3,000 issue comments is built from GitHub, ensuring a diverse vocabulary and context.
+2. **Preprocessing**: Text is cleaned by removing non-English characters, expanding contractions, and eliminating code snippets, URLs, and stop words.
+3. **Feature Vectorization**: Two methods, TF-IDF and Doc2Vec, are used to convert text into numerical feature vectors.
+4. **Sentiment Classification**: Supervised machine learning algorithms classify comments into positive, negative, or neutral sentiments.
+5. **Entity Recognition**: The tool identifies entities (e.g., 'Person' or 'Project') associated with sentiments, generating <sentiment, entity> tuples.
+This approach enhances understanding of developer sentiments and their targets within software engineering contexts.

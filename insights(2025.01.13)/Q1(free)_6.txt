@@ -1,0 +1,31 @@
+To analyze sentiment for software engineering texts, the paper presents a systematic approach through the development of a sentiment analysis classifier called Senti4SD. Here are the key steps and methodologies outlined in the paper for conducting sentiment analysis in the context of software engineering:
+
+1. **Understanding Sentiment Analysis**: 
+   - Sentiment analysis involves determining the subjectivity (neutral vs. emotionally loaded) and polarity (positive vs. negative) of a text. It typically relies on sentiment lexicons, which are collections of words annotated with their sentiment orientation.
+
+2. **Challenges in Software Engineering Context**:
+   - Off-the-shelf sentiment analysis tools are often trained on non-technical domains, leading to misclassifications when applied to technical texts. For example, technical jargon and problem reports may be misclassified due to the negative bias of existing tools.
+
+3. **Development of Senti4SD**:
+   - Senti4SD is specifically trained for sentiment analysis in software developers' communication channels, such as Stack Overflow. It is built using a gold standard dataset of posts from Stack Overflow that have been manually annotated for sentiment polarity.
+
+4. **Feature Extraction**:
+   - Senti4SD utilizes a combination of different types of features:
+     - **Lexicon-based Features**: These features are derived from sentiment lexicons, capturing the number of positive and negative words, their scores, and the presence of emoticons.
+     - **Keyword-based Features**: These include counts of n-grams (uni-grams and bi-grams) and other linguistic features such as the use of uppercase words, laughter expressions, and elongated words.
+     - **Semantic Features**: These are based on distributional semantic models (DSMs) created using word embedding techniques (e.g., word2vec). The document is represented as a vector, and similarity scores are computed against prototype vectors representing different sentiment classes (positive, negative, neutral).
+
+5. **Training and Evaluation**:
+   - The classifier is trained using a supervised machine learning approach, specifically Support Vector Machines (SVM). The training set is created by splitting the gold standard dataset into training and test sets.
+   - The performance of Senti4SD is evaluated against baseline tools like SentiStrength, focusing on metrics such as precision, recall, and F-measure for different sentiment classes.
+
+6. **Addressing Negative Bias**:
+   - Senti4SD aims to reduce the misclassification of neutral texts as negative, which is a common issue with existing sentiment analysis tools. The paper reports improvements in precision and recall for both negative and neutral classes compared to the baseline.
+
+7. **Public Availability of Resources**:
+   - The authors provide access to the Senti4SD classifier, the gold standard dataset, and the distributional semantic model for further research and validation by the community.
+
+8. **Future Work**:
+   - The paper suggests exploring additional features, such as part-of-speech tagging and rhetorical structures, and aims to extend the gold standard to include specific emotion labels.
+
+In summary, the paper outlines a comprehensive methodology for sentiment analysis in software engineering texts, emphasizing the importance of domain-specific training, feature extraction, and evaluation against established benchmarks.

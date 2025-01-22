@@ -1,0 +1,8 @@
+To analyze sentiment in software engineering texts, particularly code review comments, a customized sentiment analysis tool like SentiCR is essential. The process involves several key steps:
+1. **Data Collection**: Gather a dataset of code review comments from open-source projects, ensuring a diverse representation.
+2. **Manual Labeling**: Create a sentiment oracle by manually labeling comments as positive, negative, or neutral to establish a training dataset.
+3. **Data Preprocessing**: Implement preprocessing techniques such as expanding contractions, removing URLs, handling emoticons, and addressing negations to accurately capture sentiment context.
+4. **Feature Extraction**: Generate feature vectors using methods like TF-IDF to represent the text data.
+5. **Model Training**: Employ supervised learning algorithms (e.g., Gradient Boosting Tree) to train the model on the labeled dataset.
+6. **Evaluation**: Validate the model's performance using metrics like precision, recall, and accuracy through cross-validation.
+This tailored approach enhances the accuracy of sentiment analysis in the software engineering domain.

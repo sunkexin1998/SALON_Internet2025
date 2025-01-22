@@ -1,0 +1,26 @@
+To analyze sentiment for software engineering texts, the paper outlines a systematic approach that involves the development of a domain-specific sentiment analysis tool called SentiStrength-SE. Here are the key steps and methodologies described in the paper:
+
+1. **Identify Challenges**: Conduct an exploratory qualitative study to identify the challenges and difficulties in automated sentiment analysis specific to software engineering texts. The study revealed issues such as domain-specific meanings of words, context-sensitive variations, and the limitations of existing sentiment analysis tools.
+
+2. **Develop a Domain Dictionary**: Create a domain-specific sentiment dictionary tailored for software engineering texts. This involves:
+   - Collecting a large dataset of software engineering texts (e.g., commit messages, issue comments).
+   - Extracting and lemmatizing words from this dataset.
+   - Identifying and categorizing words based on their sentiment polarity (positive, negative, neutral).
+   - Engaging human raters to validate and refine the dictionary by identifying neutral terms that do not convey sentiment in the software engineering context.
+
+3. **Incorporate Heuristics**: Implement heuristics to improve sentiment detection. These heuristics can include:
+   - Contextual analysis to determine the sentiment of words based on their usage in sentences.
+   - Handling negations effectively by adjusting the detection range for negation words.
+   - Preprocessing steps to filter out irrelevant content (e.g., code snippets, URLs) that may mislead sentiment analysis.
+
+4. **Tool Development**: Build the SentiStrength-SE tool, which integrates the domain-specific dictionary and heuristics. The tool is designed to analyze sentiment in software engineering texts effectively.
+
+5. **Empirical Evaluation**: Conduct quantitative and qualitative evaluations of the tool using benchmark datasets (e.g., JIRA issue comments). This involves:
+   - Comparing the performance of SentiStrength-SE against existing domain-independent sentiment analysis tools (e.g., SentiStrength, NLTK, Stanford NLP).
+   - Measuring accuracy using metrics such as precision, recall, and F-score for different sentiment polarities (positive, negative, neutral).
+
+6. **Iterative Improvement**: Based on the evaluation results, iteratively refine the domain dictionary and heuristics to address any identified shortcomings. This may involve adding new words, adjusting heuristics, or expanding the dataset used for training the sentiment analysis model.
+
+7. **Future Research Directions**: Explore further improvements and applications of the sentiment analysis tool in various contexts within software engineering, including analyzing emotional variations and their impacts on software development practices.
+
+By following these steps, researchers and practitioners can effectively analyze sentiment in software engineering texts, leading to better understanding and management of developer emotions and interactions.

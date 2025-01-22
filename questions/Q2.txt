@@ -1,0 +1,3 @@
+According to the given paper, what are the differences in sentiment expression in software engineering texts? Please answer within 50 words.
+
+According to the given paper, how to handle such software engineering texts when analyzing sentiment? Please answer within 100 words.

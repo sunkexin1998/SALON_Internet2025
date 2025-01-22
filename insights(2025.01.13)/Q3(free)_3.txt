@@ -1,0 +1,31 @@
+The paper emphasizes the need to distinguish between technical descriptive text and sentiment expressive text in the context of sentiment analysis for software engineering (SE) texts for several reasons:
+
+1. **Different Purposes**: Technical descriptive text typically conveys information about code, algorithms, or system behavior, while sentiment expressive text conveys the feelings or attitudes of the developers towards certain aspects of the code or the review process. Mixing these two types of text can lead to misinterpretation of sentiments.
+
+2. **Presence of Technical Jargon**: SE communication often includes technical jargon, code snippets, and other domain-specific language that may not carry sentiment. Sentiment analysis tools that do not account for this can misclassify neutral or technical comments as having sentiment, leading to inaccurate results.
+
+3. **Impact of Context**: The context in which words are used can significantly affect their sentiment. For example, a phrase that is neutral in a technical context may be interpreted as negative or positive in a different context. Therefore, it is crucial to identify and separate sentiment-expressive text from purely technical descriptions to accurately assess the sentiment.
+
+4. **Sentiment Analysis Tool Limitations**: Existing sentiment analysis tools are often trained on datasets that do not reflect the unique characteristics of SE texts. As a result, they may not perform well when applied to SE datasets, leading to poor sentiment classification. A customized approach that recognizes the differences between technical and sentiment-expressive text is necessary for effective analysis.
+
+5. **Improving Accuracy**: By distinguishing between these two types of text, sentiment analysis can be more accurately tailored to the specific language and structure of code review comments. This can enhance the performance of sentiment analysis tools, as demonstrated by the development of SentiCR, which is designed specifically for analyzing code review comments.
+
+In summary, distinguishing between technical descriptive text and sentiment expressive text is essential for accurate sentiment analysis in the software engineering domain, as it helps to avoid misinterpretation, improves the performance of sentiment analysis tools, and ensures that the unique characteristics of SE communication are taken into account.
+
+The paper outlines several strategies to distinguish between technical descriptive text and sentiment expressive text when analyzing sentiment in software engineering (SE) texts, particularly in the context of code review comments. Here are the key approaches mentioned:
+
+1. **Manual Labeling**: The authors created a sentiment oracle by manually labeling a dataset of code review comments. This involved categorizing comments as 'positive', 'negative', or 'neutral' based on the perceived sentiment. This manual labeling helps establish a clear distinction between technical descriptions and sentiment expressions.
+
+2. **Contextual Analysis**: The authors emphasize the importance of understanding the context in which words and phrases are used. Sentiment analysis tools should be designed to recognize the context of comments, identifying when a comment is expressing an opinion versus when it is providing technical information.
+
+3. **Negation Handling**: The paper discusses the implementation of negation preprocessing to accurately capture sentiment. For example, the phrase "I do not like your changes" should be recognized as negative sentiment, while "I like your changes" is positive. By accurately identifying negation, the sentiment analysis can better differentiate between technical comments and those expressing sentiment.
+
+4. **Feature Vector Generation**: The authors used TF-IDF (Term Frequency-Inverse Document Frequency) to extract features for classification. By focusing on the words that are more indicative of sentiment and filtering out technical jargon or common programming keywords, the analysis can better capture sentiment-expressive text.
+
+5. **Customized Stop-Word List**: The authors created a customized stop-word list that includes common technical terms and programming keywords that do not contribute to sentiment. By removing these from the analysis, the sentiment analysis can focus on words that are more likely to express sentiment.
+
+6. **Code Snippet Removal**: The paper mentions the removal of code snippets from comments, as these do not express sentiment. By identifying and excluding these technical elements, the analysis can concentrate on the sentiment-expressive parts of the comments.
+
+7. **Training on Domain-Specific Data**: The development of SentiCR, a sentiment analysis tool specifically designed for code review comments, highlights the importance of training sentiment analysis models on domain-specific datasets. This ensures that the models learn to recognize the unique characteristics of SE texts, including the distinction between technical and sentiment-expressive language.
+
+By employing these strategies, the authors aim to improve the accuracy of sentiment analysis in the software engineering domain, ensuring that the analysis effectively distinguishes between technical descriptions and sentiment expressions.

@@ -1,0 +1,6 @@
+1			SentiStrength-SE- Exploiting domain specificity for improved sentiment analysis in software engineering text.pdf
+2			Exploiting the Unique Expression for Improved Sentiment Analysis in Software Engineering Text.pdf
+3			SentiCR- A Customized Sentiment Analysis Tool for Code Review Interactions.pdf
+4			Entity-Level Sentiment Analysis of Issue Comments.pdf
+5			SEntiMoji-An Emoji-Powered Learning Approach for Sentiment Analysis in Software Engineering.pdf
+6			Sentiment Polarity Detection for Software Development.pdf

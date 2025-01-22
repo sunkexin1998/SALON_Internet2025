@@ -1,0 +1,93 @@
+Sorry about that.
+The patch looks good.
+I'm sorry.
+But now that I think about it, it may crap out when coming back to read even on a recovered file.
+The defect  from hell 666, be scared..
+It's not too bad once CacheConfig is in.
+Taking it over Thanks,Mayank
+This looks good to me.
+Finally closing this bug from hell.
+You're results are awesome Paul. Great work :) Looking forward to see your new JSON parser in trunk whenever you think is ready."
+Sorry, my code base is a little old, looks alike HADOOP - 9147 add some new test in TestFileStatus.
+Sorry about that.
+huh ... i thought i did resolve this.
+damn this was assigned to you since months.
+This is bad.
+I haven't had any time to try re-upgrading after having to back out 2.0.8, but I will be sure to let you know how it works out as soon as I get the opportunity.
+Yes it is a dup, thanks Mike for taking care of this (I planned to do this yesterday but didn't make it)
+Sorry I didn't use your patch, but I think you' ll alike the end result.
+It also happens at the very startup after he has loaded only 3 sstables( hence DataTracker likely have 3 sstables, not a shit load).
+But please don't say that my reasoning is bad - because it is not.
+Brain fart.
+Sweet, I will review and apply.
+Great! It's been good to be able to contribute and I hope to be able to more for this awesome project when I have the spare time.
+Sorry to have not spotted this one, and thanks for your care.
+Please forget last comment, it is incorrect.
+Weird.
+HTML is quite uncomfortable to work with.
+Applied patch with thanks to Scott.
+If you know of a way, please describe it.
+Sorry about that.
+tricky shit man! I think I found the issue!
+This really sucks!
+Sorry I missed the "overwrite" keyword.
+Forget the patch for the moment."
+Sorry, for all the issue mails, I forgot to mention the second:2) There is commented source in the test, should it be enabled or removed?
+Damn...
+Sorry if this spam's things, however it's unlikely that I' ll work on these.
+sorry for your time.
+Hi Carlos, This looks awesome! Lots of cool stuff.
+sorry, this bug is *not* fixed.
+This way lies metadata hell.
+sorry about this.
+Oops, had a bad comparator in the TestCLI config.
+Ok. Stupid user Error here.
+Daryn, the current patch looks good.
+Great work...this is awesome stuff.
+Thank you,+ Harit Himanshu
+Too bad we can't use position:fixed in IE6.
+When you install a node module globally it goes into /usr/local where you don't have permissions to move shit into unless you sudo.
+Thanks to Edward and Brock for the reviews.
+I'm an idiot.
+Awesome! This tool is cool.
+I missed the context.
+This is only a problem with exceptions from java.
+This looks simple and sweet to me.
+My bad.
+It will be great if you could confirm it either way first.
+Thanks for moving so quickly on this guys.
+My bad.
+This was a very bad bug, introduced by me being an idiot.
+You are messing down deep below hbase in dfs.
+which is silly -- bad package encapsulation).
+That sounds alike some serious buck passing.
+Sorry, I guess I'm against ""never computing this shit""... because you guys think returning NaN is ok.
+I lost the whole morning cause HBase's RegionServer was dying with no logs, no nothing... how Am I supposed to debug the issue if u do not even generate a core dump?
+I've looked at what can be done within the NSIS framework we use to build the Windows installer.
+Forgot to mention: Thanks to Alejandro and his team for pointing this one...
+I don't care if everything is pretty or not, but we should at least support basic admin functionality in IE IMO (though I have not used it for years for just about anything).
+@Ashutosh: thanks a lot for the comments.
+Hello George,The fix looks fine, many thanks!
+Thanks Tony.
+No sorry.
+great. awesome job sergey!
+This sucks.
+(How bad is this?
+Here are 2 patches ... one for adjustExamplePaths.bat & .sh and the other a new file holding 2 User Libraries ... UIMA_LIB & UIMA_AS_LIB.Not sure where this should go ..."
+Thanks Alexei, the patch is fine.
+Marcelo, thanks for pointing out this; it is now fixed in rev.
+Sorry for the super-slow uptake on this, the new job is using up all of my limited brain resources.
+Here is quite bad.
+who the fuck is asking for scores, but not the max score, and why does their insanely specialized use case justify all these booleans on a central lucene class.
+Thanks, Tom
+Because, we don't care for this in cases where we there is no node that is down.
+Thanks Ravi.
+I'm happy to use it as the standard logo (i.e. website, etc.).
+A feature with wrong functionality is as bad as, if not worse than, a bad performance.
+Thanks Koji!
+I'm a pretty strong -0 on this.
+Oh, sorry.
+Thanks Sandy.
+Thank you Brandon.
+Sorry for the confusion :)
+I have a really bad habit of not reading thru all the bug comments before asking questions.

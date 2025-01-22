@@ -1,0 +1,13 @@
+Sentiment expression in software engineering texts differs from general texts due to the use of technical jargon, word contractions, emoticons, URLs, and code snippets. These elements can obscure sentiment meaning, necessitating customized sentiment analysis tools tailored specifically for the software engineering domain.
+
+To handle sentiment analysis in software engineering texts, the paper suggests several preprocessing steps: 
+
+1. **Expansion of Contractions**: Replace shortened forms with their full versions.
+2. **URL Removal**: Eliminate URLs that do not contribute to sentiment.
+3. **Emoticon Handling**: Replace emoticons with corresponding sentiment words.
+4. **Negation Preprocessing**: Identify and correctly scope negations using part-of-speech tagging and chunking.
+5. **Word Stemming**: Reduce words to their base forms.
+6. **Stop-Word Removal**: Use a customized list to exclude non-semantic words.
+7. **Code Snippet Removal**: Exclude programming keywords and identifiers that do not express sentiment. 
+
+These steps enhance the accuracy of sentiment analysis in this domain.

@@ -1,0 +1,28 @@
+The paper "Entity-Level Sentiment Analysis of Issue Comments" presents a systematic approach to analyzing sentiment in software engineering texts, specifically focusing on issue comments from open-source software projects on GitHub. Here’s a summary of the methodology outlined in the paper:
+### 1. **Dataset Creation**
+   - **Data Collection**: The authors collected a large dataset of issue comments from GitHub, totaling 231,732 comments from 10 popular repositories.
+   - **Manual Annotation**: A subset of 3,000 comments was manually labeled for sentiment (positive, negative, neutral) by multiple annotators to create a reliable training dataset.
+### 2. **Preprocessing**
+   - **Text Cleaning**: The text data underwent several preprocessing steps, including:
+     - Removal of non-English characters.
+     - Expansion of contractions.
+     - Removal of code snippets, URLs, and quotations.
+     - Stop words removal to reduce noise.
+     - Processing of emoticons and punctuation marks to capture sentiment.
+     - Negation handling to correctly interpret sentiment in sentences.
+### 3. **Feature Vectorization**
+   - **TF-IDF and Doc2Vec**: The authors experimented with two feature extraction methods:
+     - **TF-IDF (Term Frequency-Inverse Document Frequency)**: A statistical measure to evaluate the importance of a word in a document relative to a corpus.
+     - **Doc2Vec**: A method to represent documents as vectors, capturing the context of words.
+### 4. **Sentiment Classification**
+   - **Supervised Machine Learning**: The authors employed various supervised machine learning algorithms (e.g., Random Forest, Gradient Boosting Tree, Naïve Bayes) to classify the sentiment of the comments.
+   - **Balancing the Dataset**: Due to the imbalanced nature of the dataset (more neutral comments), they used the Synthetic Minority Oversampling Technique (SMOTE) to balance the classes.
+### 5. **Entity Recognition**
+   - **Identifying Entities**: The tool, SentiSW, recognizes entities in the comments, categorizing them as either 'Person' or 'Project'.
+   - **Rule-Based Approach**: The authors developed rules based on their observations during the annotation process to identify entities, leveraging features such as personal pronouns and specific keywords.
+### 6. **Evaluation**
+   - **Performance Metrics**: The performance of the sentiment classification and entity recognition was evaluated using metrics such as precision, recall, F-measure, and accuracy.
+   - **Comparison with Existing Tools**: The authors compared their tool, SentiSW, with existing sentiment analysis tools (e.g., SentiStrength) and demonstrated its superior performance in the software engineering domain.
+### Conclusion
+The paper emphasizes the importance of domain-specific sentiment analysis tools, as general tools often perform poorly in the context of software engineering texts. The proposed methodology, which includes a well-structured dataset, preprocessing techniques, feature extraction, and machine learning classification, provides a robust framework for analyzing sentiment in software engineering communications. 
+This approach can help improve understanding of developer sentiments, which can ultimately enhance collaboration and productivity in software development teams.

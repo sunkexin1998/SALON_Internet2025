@@ -1,0 +1,3 @@
+According to the given paper, what are the differences in sentiment expression in software engineering texts?
+
+According to the given paper, how to handle such software engineering texts when analyzing sentiment?

@@ -1,0 +1,33 @@
+The paper proposes a novel approach to sentiment analysis specifically tailored for software engineering (SE) texts, which differ significantly from typical social media or movie review texts in terms of sentiment expression. Here’s a summary of the methodology outlined in the paper for analyzing sentiment in SE texts:
+
+### 1. **Understanding the Unique Characteristics of SE Texts**
+   - **Indirect and Dispersed Sentiment Expression**: SE texts often express sentiments indirectly, requiring detailed descriptions of issues before stating opinions. This contrasts with the more direct expressions found in social media texts.
+   - **Complex Sentence Structures**: SE texts tend to have more complicated sentence structures, which necessitates a different approach to sentiment analysis.
+
+### 2. **Proposed Approach: SESSION**
+   The proposed method, named SESSION (SentEnce-Structure-based SentIment analysis for sOftware eNgineering), consists of three main steps:
+
+#### Step 1: Preprocessing and Segmenting SE Texts
+   - **Text Preprocessing**: This involves filtering out technical jargon and irrelevant content (e.g., greetings, technical terms) that do not contribute to sentiment analysis.
+   - **Segmentation**: The text is segmented into sentences and further into clauses using natural language processing tools (e.g., Stanford CoreNLP). Each word is tagged with its part of speech (POS).
+
+#### Step 2: Applying Filter Rules
+   - **Pattern Matching**: The approach uses specific patterns to determine whether a clause is likely to express sentiment. The patterns include:
+     - **Direct Sentiment Pattern**: Identifies sentences with exclamations, emojis, interjections, or imperative sentences with high sentiment density.
+     - **Decorated Sentiment Pattern**: Looks for sentimental words modified by adverbs.
+     - **"About Me" Pattern**: Focuses on first-person expressions of sentiment.
+     - **Judgment Pattern**: Identifies sentences that express judgments about objects or situations.
+   - **Filtering**: Clauses that do not match any of these patterns are ignored for sentiment analysis.
+
+#### Step 3: Adjusting Sentiment Analysis
+   - **Adjust Rules**: These rules enhance the sentiment analysis results by addressing specific issues:
+     - **Subjunctive Mood Recognition**: Sentiments in subjunctive clauses are ignored as they do not express real sentiments.
+     - **Polysemous Words Handling**: The meaning of words that can have multiple interpretations is determined based on their context and POS tags.
+     - **Negation Handling**: The approach refines how negations affect sentiment scores, ensuring that the sentiment context is preserved.
+
+### 3. **Evaluation and Results**
+   - The proposed approach was empirically evaluated using four datasets from different SE contexts (e.g., Stack Overflow, app reviews, JIRA).
+   - The results showed that SESSION outperformed existing dictionary-based and learning-based sentiment analysis tools, demonstrating better accuracy and generalizability.
+
+### Conclusion
+The paper emphasizes that the unique characteristics of SE texts necessitate a tailored approach to sentiment analysis. By leveraging sentence structures and specific filtering and adjustment rules, SESSION effectively improves the accuracy of sentiment analysis in the software engineering domain. The tool developed is publicly available for further use and research.

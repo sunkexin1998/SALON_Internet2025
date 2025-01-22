@@ -1,0 +1,13 @@
+In software engineering texts, sentiment expressions differ from general domains due to the presence of code snippets, specific terminologies, and emojis. Developers often express positive sentiments towards individuals, showing gratitude or agreement, while negative sentiments are directed towards projects, reflecting frustration or disappointment.
+
+To analyze sentiment in software engineering texts, the paper suggests several preprocessing steps: 
+
+1. **Non-English Character Deletion**: Remove non-ASCII characters.
+2. **Contraction Expansion**: Replace abbreviations with full words.
+3. **Code Snippet Removal**: Eliminate code snippets and URLs to focus on pure text.
+4. **Stop Words Removal**: Remove common words that do not convey sentiment.
+5. **Emoticon and Punctuation Processing**: Recognize and replace emoticons with sentiment indicators.
+6. **Negation Marking**: Adjust sentiment meaning by marking negations.
+7. **Word Tokenization and Stemming**: Break down sentences into words and reduce them to their base forms. 
+
+These steps help extract meaningful sentiment from the unique context of software engineering communications.

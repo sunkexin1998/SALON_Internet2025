@@ -1,0 +1,1 @@
+According to the given paper, how to analyze sentiment for software engineering texts? Please answer within 150 words.

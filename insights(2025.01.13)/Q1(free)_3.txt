@@ -1,0 +1,28 @@
+To analyze sentiment for software engineering (SE) texts, particularly in the context of code review comments, the paper outlines a systematic approach that includes the following key steps:
+
+1. **Dataset Creation**:
+   - **Manual Labeling**: A dataset of code review comments is created by manually labeling a sample of comments from open-source software (OSS) projects. In the study, 2000 comments were labeled as positive, negative, or neutral.
+   - **Sentiment Oracle**: This labeled dataset serves as a sentiment oracle for evaluating sentiment analysis tools.
+
+2. **Evaluation of Existing Tools**:
+   - The performance of existing sentiment analysis tools (both lexicon-based and supervised learning-based) is evaluated on the SE dataset. The study found that these tools performed poorly, highlighting the need for a customized tool.
+
+3. **Development of a Customized Tool (SentiCR)**:
+   - **SentiCR** is developed specifically for analyzing sentiment in code review comments. It employs supervised learning techniques and is trained on the labeled dataset created earlier.
+
+4. **Data Preprocessing**:
+   - **Text Normalization**: This includes expanding contractions, removing URLs, and handling emoticons by replacing them with sentiment indicators.
+   - **Negation Handling**: A sophisticated approach is used to identify and process negations in comments, ensuring that the sentiment expressed is accurately captured.
+   - **Feature Extraction**: The text is tokenized, and features are extracted using techniques like TF-IDF (Term Frequency-Inverse Document Frequency). Stop words and programming keywords are removed to focus on meaningful words.
+
+5. **Model Training and Evaluation**:
+   - Various supervised learning algorithms (e.g., Gradient Boosting Tree, Random Forest, Naïve Bayes) are evaluated using 10-fold cross-validation. The performance metrics include precision, recall, accuracy, and F-measure.
+   - The study found that the Gradient Boosting Tree algorithm provided the best performance in identifying negative sentiments.
+
+6. **Performance Improvement**:
+   - The impact of negation preprocessing on model performance is assessed, showing that it improves the accuracy of sentiment classification.
+
+7. **Public Availability**:
+   - Both the SentiCR tool and the sentiment oracle are made publicly available for further research and application.
+
+In summary, the analysis of sentiment in software engineering texts involves creating a labeled dataset, evaluating existing tools, developing a customized sentiment analysis tool, preprocessing the text data, training and evaluating machine learning models, and ensuring the tool's effectiveness through rigorous testing. The approach emphasizes the importance of tailoring sentiment analysis techniques to the specific characteristics of SE communication.

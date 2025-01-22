@@ -1,0 +1,6 @@
+Sentiment expression in software engineering texts is more indirect and dispersed compared to social texts. Developers often describe issues in detail before expressing sentiments, leading to fewer explicit sentiments and a more complex sentence structure, which complicates sentiment analysis.
+
+To analyze sentiment in software engineering texts, the paper proposes a three-step approach: 
+1. **Preprocessing and Segmentation**: Use NLP tools to segment texts into clauses and filter out technical jargon and irrelevant content. 
+2. **Pattern Matching**: Apply filter rules to identify clauses likely expressing sentiment, focusing on direct sentiment patterns, decorated sentiment patterns, and judgment patterns.
+3. **Adjusting Sentiment Analysis**: Implement adjust rules to refine sentiment scores by recognizing subjunctive moods, identifying polysemous words based on context, and handling negations effectively. This approach enhances the accuracy of sentiment analysis tailored to the unique expression styles in software engineering texts.

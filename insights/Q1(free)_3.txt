@@ -1,0 +1,23 @@
+To analyze sentiment for software engineering (SE) texts, particularly in the context of code review comments, the paper outlines a systematic approach that includes the following key steps:
+1. **Dataset Creation**:
+   - **Manual Labeling**: Create a labeled dataset by manually annotating a collection of code review comments. In the study, 2000 comments were labeled as positive, negative, or neutral.
+   - **Selection Criteria**: Choose comments from popular open-source software (OSS) projects that actively use code review tools (e.g., Gerrit) to ensure a diverse and representative dataset.
+2. **Data Preprocessing**:
+   - **Expansion of Contractions**: Replace contractions (e.g., "don't" with "do not") to standardize the text.
+   - **URL Removal**: Eliminate URLs from comments as they do not contribute to sentiment.
+   - **Emoticon Handling**: Replace emoticons with corresponding sentiment words (e.g., ":)" with "PositiveEmoticon").
+   - **Negation Processing**: Implement a method to accurately handle negations in comments, ensuring that the sentiment is correctly interpreted (e.g., "I do not like" should be processed to reflect the negative sentiment).
+   - **Word Stemming**: Reduce words to their base or root form to unify variations (e.g., "running" to "run").
+   - **Stop-Word Removal**: Remove common stop-words that do not contribute to sentiment (e.g., "and," "the") while ensuring that important sentiment-related words (like "no" or "not") are retained.
+   - **Code Snippet Removal**: Exclude code snippets from comments, as they do not express sentiment.
+   - **Feature Vector Generation**: Use techniques like TF-IDF (Term Frequency-Inverse Document Frequency) to create a feature vector for the comments, which will be used for classification.
+3. **Sentiment Analysis Model**:
+   - **Supervised Learning**: Train a sentiment analysis model using various supervised learning algorithms (e.g., Gradient Boosting Tree, Naïve Bayes, Support Vector Machine) on the preprocessed dataset.
+   - **Cross-Validation**: Employ techniques like 10-fold cross-validation to evaluate the model's performance and ensure robustness.
+   - **Handling Class Imbalance**: Use techniques like SMOTE (Synthetic Minority Over-sampling Technique) to address class imbalance in the dataset, particularly for negative sentiments.
+4. **Evaluation**:
+   - **Performance Metrics**: Assess the model's performance using metrics such as precision, recall, F-measure, and accuracy to determine how well it identifies sentiments in code review comments.
+   - **Comparison with Existing Tools**: Compare the performance of the developed model (SentiCR) against existing sentiment analysis tools to highlight improvements and validate the need for a customized tool for the SE domain.
+5. **Implementation**:
+   - The tool (SentiCR) is implemented in Python, utilizing libraries like NLTK for natural language processing and scikit-learn for machine learning.
+By following these steps, researchers and practitioners can effectively analyze sentiment in software engineering texts, particularly in code review interactions, leading to insights about developer emotions and their impact on software development processes.
