@@ -1,0 +1,6 @@
+To analyze sentiment for software engineering (SE) texts, the paper proposes **SentiSW**, an entity-level sentiment analysis tool. The process involves:
+1. **Preprocessing**: Remove non-English characters, expand contractions, remove code snippets, URLs, and stop words, process emoticons, and handle negation words. Tokenize and stem the text.
+2. **Feature Vectorization**: Use **TF-IDF** or **Doc2vec** to convert text into feature vectors.
+3. **Sentiment Classification**: Apply supervised machine learning algorithms (e.g., Gradient Boosting Tree) to classify texts into **positive**, **negative**, or **neutral** sentiments. Oversampling techniques like **SMOTE** are used to handle imbalanced datasets.
+4. **Entity Recognition**: Use rule-based methods to identify sentiment targets as **Person** or **Project**, leveraging named entity recognition and part-of-speech tagging.
+This approach outperforms general sentiment tools like **SentiStrength** by incorporating SE-specific preprocessing and domain-aware features.

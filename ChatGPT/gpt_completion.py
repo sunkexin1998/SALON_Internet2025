@@ -4,8 +4,6 @@ import concurrent.futures
 import functools
 from openai import AzureOpenAI
 
-# openai_api_key = 'sk-onKl1M8665QV0A3yxZisOwSDX9Vs14Sevmbiyms6I7C15tiv' # 世杰项目里的
-# openai_base_url = 'https://api.bianxie.ai/v1'
 
 openai_api_key = ''
 openai_base_url = 'https://api.openai.com/v1'
@@ -20,11 +18,21 @@ azure_client = AzureOpenAI(
   api_version = "2024-09-01-preview"
 )
 
-client = openai_client
+gpt_client = openai_client
+
+
+deepseek_V3 = "deepseek-chat"
+deepseek_api_key = ''
+deepseek_url = 'https://api.deepseek.com'
+deepseek_client = OpenAI(api_key=deepseek_api_key, base_url=deepseek_url)
+
+
+
 
 
 turbo_name = "gpt-4o-mini"
 big_turbo_name = "gpt-4o"
+deepseek_V3 = "deepseek-chat"
 
 
 def timeout(seconds):
@@ -46,7 +54,6 @@ def timeout(seconds):
 
     return decorator
 
-
 def get_completion_by_loop(get_completion, prompt):
     while True:
         try:
@@ -65,10 +72,53 @@ def get_completion_by_loop(get_completion, prompt):
 
     return response
 
+def get_completion_with_retry(model, input_data, input_type="prompt"):
+    """
+    通用的带重试的 GPT 请求函数。
+
+    参数:
+        model (str): 使用的模型名称。
+        input_data (str or list): 输入数据，字符串表示 prompt，列表表示 messages。
+        input_type (str): 输入类型，"prompt" 或 "messages"。
+
+    返回:
+        str: GPT 响应内容。
+    """
+    def completion_function(input_data):
+        return _get_completion(model, input_data, input_type)
+
+    return get_completion_by_loop(completion_function, input_data)
+
 
 @timeout(90)
-def get_turbo_completion_with_prompt(prompt, model=turbo_name):
-    messages = [{"role": "user", "content": prompt}]
+def _get_completion(model, input_data, input_type):
+    """
+    内部通用的 GPT 完成请求函数。
+
+    参数:
+        model (str): 使用的模型名称。
+        input_data (str or list): 输入数据，字符串表示 prompt，列表表示 messages。
+        input_type (str): 输入类型，"prompt" 或 "messages"。
+
+    返回:
+        str: GPT 响应内容。
+    """
+    if input_type == "prompt":
+        messages = [{"role": "user", "content": input_data}]
+    elif input_type == "messages":
+        messages = input_data
+    else:
+        raise ValueError("input_type must be either 'prompt' or 'messages'")
+
+    # 动态选择客户端
+    if model in [turbo_name, big_turbo_name]:
+        client = gpt_client
+    elif model == deepseek_V3:
+        client = deepseek_client
+    else:
+        raise ValueError(f"Unsupported model: {model}")
+
+    # 调用 API
     response = client.chat.completions.create(
         model=model,
         messages=messages,
@@ -77,55 +127,26 @@ def get_turbo_completion_with_prompt(prompt, model=turbo_name):
     return dict(response.choices[0].message)["content"]
 
 
-@timeout(90)
-def get_turbo_completion_with_messages(messages, model=turbo_name):
-    response = client.chat.completions.create(
-        model=model,
-        messages=messages,
-        temperature=0,
-    )
-    return dict(response.choices[0].message)["content"]
-
-
-@timeout(90)
-def get_big_turbo_completion_with_prompt(prompt, model=big_turbo_name):
-    messages = [{"role": "user", "content": prompt}]
-    response = client.chat.completions.create(
-        model=model,
-        messages=messages,
-        temperature=0,
-    )
-    return dict(response.choices[0].message)["content"]
-
-
-@timeout(90)
-def get_big_turbo_completion_with_messages(messages, model=big_turbo_name):
-    response = client.chat.completions.create(
-        model=model,
-        messages=messages,
-        temperature=0,
-    )
-    return dict(response.choices[0].message)["content"]
-
-
+# 简化后的具体调用函数
 def get_completion_from_pmt_with_turbo(prompt):
-    response = get_completion_by_loop(get_turbo_completion_with_prompt, prompt)
-    return response
+    return get_completion_with_retry(model=turbo_name, input_data=prompt, input_type="prompt")
 
 
 def get_completion_from_msg_with_turbo(messages):
-    response = get_completion_by_loop(get_turbo_completion_with_messages,
-                                      messages)
-    return response
+    return get_completion_with_retry(model=turbo_name, input_data=messages, input_type="messages")
 
 
 def get_completion_from_pmt_with_big_turbo(prompt):
-    response = get_completion_by_loop(get_big_turbo_completion_with_prompt,
-                                      prompt)
-    return response
+    return get_completion_with_retry(model=big_turbo_name, input_data=prompt, input_type="prompt")
 
 
 def get_completion_from_msg_with_big_turbo(messages):
-    response = get_completion_by_loop(get_big_turbo_completion_with_messages,
-                                      messages)
-    return response
+    return get_completion_with_retry(model=big_turbo_name, input_data=messages, input_type="messages")
+
+
+def get_completion_from_pmt_with_deepseek_V3(prompt):
+    return get_completion_with_retry(model=deepseek_V3, input_data=prompt, input_type="prompt")
+
+
+def get_completion_from_msg_with_deepseek_V3(messages):
+    return get_completion_with_retry(model=deepseek_V3, input_data=messages, input_type="messages")

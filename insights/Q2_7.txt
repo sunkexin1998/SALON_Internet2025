@@ -1,0 +1,8 @@
+The paper highlights that sentiment expression in software engineering texts varies significantly based on context, with security-related discussions often exhibiting more negative emotions compared to non-security topics. Additionally, the choice of sentiment analysis tools can lead to different polarity label distributions, affecting the interpretation of sentiments in these texts.
+
+To effectively analyze sentiment in software engineering texts, the paper suggests several strategies: 
+1. **Retraining Tools**: If possible, retrain sentiment analysis tools on domain-specific datasets to improve accuracy.
+2. **Sanity Checks**: Conduct preliminary checks to ensure the selected tool aligns with the research goals and conceptualization of affect.
+3. **Ensemble Methods**: Use multiple tools in an ensemble approach with majority voting to enhance agreement with manual labels.
+4. **Consider Unit of Analysis**: Be mindful of the unit of analysis (e.g., comments vs. discussions) as it can impact sentiment expression and tool performance. 
+These strategies help mitigate potential threats to conclusion validity.

@@ -1,0 +1,9 @@
+The paper highlights that sentiment expression in software engineering texts can vary due to platform-specific jargon, communication styles, and the subjectivity of sentiment annotation. Differences in labeling decisions, such as politeness and polar facts, also affect sentiment expression across datasets like GitHub, Jira, and Stack Overflow.
+
+To handle sentiment analysis in software engineering texts, the paper recommends:
+1. **Perform SE-specific tuning** to enhance accuracy.
+2. **Perform platform-specific tuning** to account for platform-specific jargon and communication styles.
+3. **Build a robust gold standard** with balanced and high-agreement datasets for reliable training.
+4. **Select the appropriate tool** based on the research goals and conduct a preliminary sanity check on the target platform.
+5. **Use lexicon-based tools** when retraining is not feasible due to the unavailability of a gold standard.
+These steps ensure reliable sentiment analysis across different software engineering platforms.

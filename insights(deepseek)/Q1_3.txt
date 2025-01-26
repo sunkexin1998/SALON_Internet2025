@@ -1,0 +1,6 @@
+To analyze sentiment for software engineering (SE) texts, the paper proposes **SentiCR**, a customized sentiment analysis tool designed specifically for code review comments. Unlike general sentiment analysis tools, SentiCR addresses the unique characteristics of SE texts, such as technical jargon, code snippets, and informal language. The process involves:
+1. **Data Preprocessing**: Expanding contractions, removing URLs, handling emoticons, preprocessing negations, stemming words, removing stopwords, and eliminating code snippets.
+2. **Feature Extraction**: Generating a feature vector using TF-IDF (Term Frequency-Inverse Document Frequency).
+3. **Model Training**: Evaluating eight supervised learning algorithms (e.g., Gradient Boosting Tree, Naïve Bayes) using a manually labeled dataset of 2000 code review comments.
+4. **Negation Handling**: Implementing a custom negation preprocessing step to improve accuracy.
+SentiCR achieves high accuracy (83%) in identifying negative sentiments, outperforming existing tools like SentiStrength and NLTK, which are not tailored for SE texts.

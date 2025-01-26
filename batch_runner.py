@@ -18,13 +18,13 @@ output_dir = 'ChatGPT/outputs(basic_prompt_1)/'
 def add2csv(def_index, prompt_index):
     human_labeled_file = f'human_labeled/{target}_test.csv'
     if def_index == 0:
-        pred_file = f'ChatGPT/outputs(basic_prompt_2)/{target}_formated_p{def_index}.{prompt_index}(gpt-4o).csv'
+        pred_file = f'ChatGPT/outputs(deepseek)/{target}_formated_p{def_index}.{prompt_index}.csv'
     else:
-        pred_file = f'ChatGPT/outputs(basic_prompt_2)/{target}_formated_p{def_index}.{prompt_index}(gpt-4o).csv'
+        pred_file = f'ChatGPT/outputs(basic_prompt_2)(deepseek)/{target}_formated_p{def_index}.{prompt_index}.csv'
     result = evaluate(human_labeled_file, pred_file)
     for index, data in enumerate(result):
         datas[index].append(data)
-    indexs.append(f'{def_index}.{prompt_index}(gpt-4o)')
+    indexs.append(f'{def_index}.{prompt_index}')
 
 
 def generate():
@@ -33,17 +33,19 @@ def generate():
         dic[field_list[index]] = data
 
     data_formated = pd.DataFrame(dic)
-    data_formated.to_csv('data(basic_prompt_2).csv', index=False)
+    data_formated.to_csv('data(deepseek).csv', index=False)
 
 
 if __name__ == '__main__':
 
-    def_index_arr = [i for i in range(0, 1 + 3)]
+    def_index_arr = [i for i in range(0, 3+1)]
     for def_index in def_index_arr:
         if def_index == 0:
-            prompt_index_arr = [2]
+            prompt_index_arr = [1,2,3]
         else:
-            prompt_index_arr = ['1', '2' ,'3', '4', '5' ,'6']
+            prompt_index_arr = ['1', '2' ,'3', '4', '5',
+                                '6', '7' ,'8', '9', '10',
+                                '11', '12' ,'13']
 
         for prompt_index in prompt_index_arr:
             add2csv(def_index, prompt_index)

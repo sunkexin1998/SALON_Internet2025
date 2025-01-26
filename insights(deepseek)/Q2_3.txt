@@ -1,0 +1,11 @@
+Software engineering texts differ from general texts due to the inclusion of technical jargon, word contractions, emoticons, URLs, and code snippets. These elements are not typically found in social media posts or product reviews, making existing sentiment analysis tools less effective for SE datasets. Customized tools like SentiCR are needed.
+
+To handle software engineering texts for sentiment analysis, the paper suggests an eight-step preprocessing approach:  
+1. Expand contractions (e.g., "don't" → "do not").  
+2. Remove URLs.  
+3. Replace emoticons with sentiment-polarity words (e.g., ":)" → "PositiveEmoticon").  
+4. Use negation preprocessing with POS tagging and chunking to handle negations.  
+5. Apply word stemming.  
+6. Remove stopwords and programming keywords.  
+7. Remove code snippets.  
+8. Generate feature vectors using TF-IDF. These steps address the unique characteristics of SE texts, such as technical jargon and informal language, enabling more accurate sentiment analysis.

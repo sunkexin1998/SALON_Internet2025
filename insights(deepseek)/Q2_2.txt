@@ -1,0 +1,10 @@
+The differences in sentiment expression in software engineering (SE) texts compared to social texts are:
+1. **Fewer Sentiments**: SE texts express fewer sentiments overall.
+2. **Indirect and Dispersed**: Sentiments in SE texts are more indirect and dispersed, often embedded in detailed descriptions of issues.
+3. **Complex Sentence Structures**: SE texts use longer, more complex sentences, making sentiment analysis more challenging.
+
+To handle sentiment analysis in software engineering (SE) texts, the paper proposes:
+1. **Preprocessing and Segmentation**: Use tools like Stanford CoreNLP to segment SE texts into clauses and tag parts of speech.
+2. **Filter Rules**: Identify clauses likely to express sentiments using patterns like Direct Sentiment, Decorated Sentiment, "About Me," and "Judgement" patterns.
+3. **Adjust Rules**: Enhance sentiment analysis by recognizing subjunctive moods, identifying polysemous words, and handling negations more accurately.
+These steps help address the indirect, dispersed, and complex nature of sentiment expression in SE texts.

@@ -6,7 +6,7 @@ import pandas as pd
 
 from evaluate import evaluate
 from prompt import get_prompt
-from ChatGPT import gpt_completion as gpt
+from ChatGPT import gpt_completion as llm
 
 
 def get_senti_1(text):
@@ -55,8 +55,10 @@ def format_res():
 
 def gpt_analysis(base_index, def_index, prompt_index, text):
     prompt = get_prompt(base_index, def_index, prompt_index, text)
+    print(prompt)
     # response = gpt.get_completion_from_pmt_with_big_turbo(prompt)
-    response = gpt.get_completion_from_pmt_with_turbo(prompt)
+    # response = gpt.get_completion_from_pmt_with_turbo(prompt)
+    response = llm.get_completion_from_pmt_with_deepseek_V3(prompt)
     return response
 
 
@@ -120,10 +122,16 @@ formated_fname = f"ChatGPT/outputs/{target_name}_formated_p{def_index}.{prompt_i
 if __name__ == '__main__':
 
     base_index = 2
-    for def_index in ['1','2','3']:
-        prompt_range = ['1', '2' ,'3', '4', '5', '6']
+    for def_index in ['0','1','2','3']:
+        if def_index=='0':
+            prompt_range = ['1', '2', '3']
+            output_package = f"ChatGPT/outputs(deepseek)"
+        else:
+            prompt_range = ['1', '2', '3', '4', '5', '6',
+                            '7', '8' ,'9', '10', '11', '12', '13']
+            output_package = f"ChatGPT/outputs(basic_prompt_{base_index})(deepseek)"
         for prompt_index in prompt_range:
-            output_fname = f"ChatGPT/outputs(basic_prompt_{base_index})/{target_name}_gpt_p{def_index}.{prompt_index}(*).txt"
-            formated_fname = f"ChatGPT/outputs(basic_prompt_{base_index})/{target_name}_formated_p{def_index}.{prompt_index}(*).csv"
+            output_fname = f"{output_package}/{target_name}_gpt_p{def_index}.{prompt_index}.txt"
+            formated_fname = f"{output_package}/{target_name}_formated_p{def_index}.{prompt_index}.csv"
             analysis_for_file()
             format_res()
